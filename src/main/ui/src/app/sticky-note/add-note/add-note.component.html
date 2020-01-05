@@ -6,18 +6,16 @@
   </button>
 </div>
 <div class="modal-body">
-  <app-alert-message [message]="'Note added/updated successfully'" *ngIf="noteAddedSuccess" [alertType]="alertType.Success"></app-alert-message>
-  <app-alert-message [message]="'Failed to add/update Note : '+ errorMessage" *ngIf="failedToAddOrUpdate" [alertType]="alertType.Failed"></app-alert-message>
+  <app-alert-message [message]="'Note added successfully'" *ngIf="noteAddedSuccess" [alertType]="alertType.Success"></app-alert-message>
+  <app-alert-message [message]="'Failed to add new Note : '+ errorMessage" *ngIf="failedToAddOrUpdate" [alertType]="alertType.Failed"></app-alert-message>
   <form [formGroup]="noteForm" *ngIf="!noteAddedSuccess">
     <div class="form-group">
-      <label for="exampleFormControlTextarea1">Note text</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="content" placeholder="Add your note here" maxlength="200"></textarea>
+      <label for="uit-note-text-content" *ngIf="!editNoteMode">Add your note</label>
+      <label for="uit-note-text-content" *ngIf="editNoteMode">Edit note text</label>
+      <textarea class="form-control" id="uit-note-text-content" rows="3" formControlName="content" placeholder="Add your note here" maxlength="200"></textarea>
     </div>
   </form>
   <app-note [hideToolbar]="true" *ngIf="addedNote && noteAddedSuccess">
-    <!--<ng-template #noteTemplate>
-        <p> {{note.content}}</p>
-    </ng-template> -->
     <app-note-text [text]="addedNote.content"></app-note-text>
   </app-note>
 </div>

@@ -1,22 +1,21 @@
 <div class="modal-header">
-  <h4 class="modal-title" id="modal-title">Product Deletion</h4>
-  <button type="button" class="close" aria-describedby="modal-title" (click)="closeModal()">
+  <h4 class="modal-title" id="modal-title">Note Deletion</h4>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="close()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <p id="uit-product-delete-warning-title"><strong>Are you sure you want to delete this note ?</strong></p>
+  <p id="uit-product-delete-warning-title" *ngIf="!deleteFailed && !deleteSuccess"><strong>Are you sure you want to delete this note ?</strong></p>
+  <app-alert-message [message]="'Deleted successfully'" [alertType]="alertType.Success" *ngIf="deleteSuccess"></app-alert-message>
+  <app-alert-message [message]="'Failed to Delete : ' + failMessage" [alertType]="alertType.Failed" *ngIf="deleteFailed"></app-alert-message>
   <div class="test">
-    <app-note [hideToolbar]="true" >
-      <!--<ng-template #noteTemplate>
-          <p> {{note.content}}</p>
-      </ng-template> -->
+    <app-note [hideToolbar]="true">
       <app-note-text [text]="note.content"></app-note-text>
     </app-note>
   </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-outline-secondary" >Cancel</button>
-  <button type="button" class="btn btn-danger" >Ok</button>
-  <button  type="button" class="btn btn-primary" (click)="closeModal()">Close</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="closeModal()" *ngIf="!deleteFailed && !deleteSuccess">Cancel</button>
+  <button type="button" class="btn btn-danger" (click)="delete(note)" *ngIf="!deleteFailed && !deleteSuccess">Delete</button>
+  <button type="button" class="btn btn-primary" (click)="close()">Close</button>
 </div>

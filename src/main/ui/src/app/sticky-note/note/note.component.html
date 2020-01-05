@@ -1,10 +1,10 @@
-<div class="card">
+<div class="card uit-note-card">
   <div class="card-header" *ngIf="!hideToolbar" >
     <div class="note_toolbar">
       <span class="close material-icons" (click)="onDelete($event)">close</span>
     </div>
   </div>
-  <div class="card-body" style="background-color: rgb(255, 240, 70)">
+  <div class="card-body">
     <div class="content" (click)="onFocusOut($event)" style="width: auto" >
       <ng-content [ngTemplateOutlet]="noteTemplate"></ng-content>
     </div>
