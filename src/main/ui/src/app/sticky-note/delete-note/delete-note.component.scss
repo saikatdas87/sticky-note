@@ -1,14 +1,5 @@
 :host {
-  .test {
-    width: 250px;
-
-    app-note .card-card-body:hover {
-      transform: scale(1);
-    }
+  .modal-header {
+    background-color: #F8F8F8;
   }
-
-}
-
-::ng-deep {
-
 }

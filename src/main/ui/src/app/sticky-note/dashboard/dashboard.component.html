@@ -1,17 +1,21 @@
 <div class="card" style="margin: 2%">
   <h5 class="card-header"> Notes</h5>
   <div class="card-body">
+    <app-alert-message [message]="'Failed to add new Note : '+ failedMessage" *ngIf="failedToLoad" [alertType]="failedAlertType"></app-alert-message>
     <div class="app">
       <app-note *ngFor="let note of notes" (delete)="deleteNote(note)" (edit)="editNote(note.id)" id="{{note.id}}">
-        <!--<ng-template #noteTemplate>
-            <p> {{note.content}}</p>
-        </ng-template> -->
         <app-note-text [text]="note.content"></app-note-text>
       </app-note>
+
+      <div *ngIf="notes.length === 0" class="app">
+        <div *ngFor="let item of [0, 1, 2]">
+          <div class="uit-note-loading-blinking"></div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="card-footer ">
-    <button class="add material-icons"  (click)="addNote()" >
+    <button class="add material-icons uit-add-note-button" (click)="addNote()">
       note_add
     </button>
   </div>

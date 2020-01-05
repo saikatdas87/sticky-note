@@ -1,5 +1,5 @@
 :host {
-  .app{
+  .app {
     overflow: auto;
     display: flex;
     flex-direction: row;
@@ -13,4 +13,40 @@
     font-size: xx-large;
     outline: none;
   }
+
+  .uit-note-loading-blinking {
+    height: 292px;
+    width: 266px;
+    margin: 10px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #F5F5F5 8%, #E8E8E8 18%, #F5F5F5 33%);
+    position: relative;
+    background-size: 1000px 20px;
+    animation-duration: 1.25s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: blinking-bar;
+    animation-timing-function: linear;
+  }
+
+  @keyframes blinking-bar {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  ::ng-deep {
+     .uit-note-card-body:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      box-shadow: 0 5px 5px 0 #D2D2D2;
+      border-radius: 5px;
+    }
+  }
+
 }
+
+
