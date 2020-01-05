@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
       this.notes = notes;
     }, error => {
       this.failedToLoad = true;
-      this.failedMessage = error.error ? error.error.message : error.message;
+      this.failedMessage = error.message;
     });
   }
 
