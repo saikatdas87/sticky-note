@@ -4,7 +4,7 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {AddNoteComponent} from '../add-note/add-note.component';
 import {DeleteNoteComponent} from '../delete-note/delete-note.component';
 import {EditNoteComponent} from '../edit-note/edit-note.component';
-import {AlertType} from "../../shared/alert-message/alert-message.component";
+import {AlertType} from '../../shared/alert-message/alert-message.component';
 
 export class Note {
   readonly id?: number;
@@ -23,16 +23,16 @@ export class Note {
 })
 export class DashboardComponent implements OnInit {
 
-  private notes: Note[] = [];
-  failedToLoad : boolean = false;
-  failedMessage : string = '';
-  failedAlertType : AlertType = AlertType.Failed;
+  notes: Note[] = [];
+  failedToLoad = false;
+  failedMessage = '';
+  failedAlertType: AlertType = AlertType.Failed;
 
   constructor(private service: NoteService, private modal: NgbModal) {
   }
 
   ngOnInit() {
-    this.service.retrieveAllNotes().subscribe( notes => {
+    this.service.retrieveAllNotes().subscribe(notes => {
       this.notes = notes;
     }, error => {
       this.failedToLoad = true;
@@ -51,7 +51,7 @@ export class DashboardComponent implements OnInit {
   }
 
   addNote() {
-    const modalRef = this.modal.open(AddNoteComponent, {backdrop: 'static'});
+    this.modal.open(AddNoteComponent, {backdrop: 'static'});
   }
 
 }

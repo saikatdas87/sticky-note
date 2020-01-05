@@ -7,13 +7,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AddNoteComponent} from './add-note/add-note.component';
 import {DeleteNoteComponent} from './delete-note/delete-note.component';
 import {SharedModule} from '../shared/shared.module';
-import { EditNoteComponent } from './edit-note/edit-note.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {BrowserModule} from "@angular/platform-browser";
+import {EditNoteComponent} from './edit-note/edit-note.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserModule} from '@angular/platform-browser';
 
 
 @NgModule({
-  declarations: [DashboardComponent, NoteComponent, NoteTextComponent, AddNoteComponent, DeleteNoteComponent, EditNoteComponent],
+  declarations: [
+    DashboardComponent,
+    NoteComponent,
+    NoteTextComponent,
+    AddNoteComponent,
+    DeleteNoteComponent,
+    EditNoteComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -23,7 +29,10 @@ import {BrowserModule} from "@angular/platform-browser";
     BrowserAnimationsModule,
     BrowserModule,
   ],
-  entryComponents: [AddNoteComponent, DeleteNoteComponent, EditNoteComponent]
+  entryComponents: [
+    AddNoteComponent,
+    DeleteNoteComponent,
+    EditNoteComponent]
 })
 export class StickyNoteModule {
 }

@@ -27,7 +27,7 @@ export class NoteService {
     return this.http.put<Note>(`${this.host}/note/${noteId}`, note);
   }
 
-  public deleteNote(noteId: number) : Observable<any> {
+  public deleteNote(noteId: number): Observable<any> {
     return this.http.delete(`${this.host}/note/${noteId}`);
   }
 }
