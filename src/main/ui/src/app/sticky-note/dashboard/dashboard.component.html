@@ -1,0 +1,21 @@
+<div class="card" style="margin: 2%">
+  <h5 class="card-header"> Notes</h5>
+  <div class="card-body">
+    <div class="app">
+      <app-note *ngFor="let note of notes" (delete)="deleteNote(note)" (edit)="editNote(note.id)" id="{{note.id}}">
+        <!--<ng-template #noteTemplate>
+            <p> {{note.content}}</p>
+        </ng-template> -->
+        <app-note-text [text]="note.content"></app-note-text>
+      </app-note>
+    </div>
+  </div>
+  <div class="card-footer ">
+    <button class="add material-icons"  (click)="addNote()" >
+      note_add
+    </button>
+  </div>
+</div>
+
+
+

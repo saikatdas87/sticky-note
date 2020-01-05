@@ -1,0 +1,22 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">Product Deletion</h4>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p id="uit-product-delete-warning-title"><strong>Are you sure you want to delete this note ?</strong></p>
+  <div class="test">
+    <app-note [hideToolbar]="true" >
+      <!--<ng-template #noteTemplate>
+          <p> {{note.content}}</p>
+      </ng-template> -->
+      <app-note-text [text]="note.content"></app-note-text>
+    </app-note>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" >Cancel</button>
+  <button type="button" class="btn btn-danger" >Ok</button>
+  <button  type="button" class="btn btn-primary" (click)="closeModal()">Close</button>
+</div>

@@ -1,0 +1,46 @@
+:host {
+  .card {
+    position: relative;
+    box-shadow: 0 5px 5px 0 #D2D2D2;
+    border-radius: 10px;
+    margin: 10px;
+    width: 266px;
+  }
+
+  .card-header {
+    background-color: #7f6c04;
+  }
+
+  .close {
+    cursor: pointer;
+    color: white;
+    position: relative;
+  }
+
+  .close:hover {
+    transform: scale(1.1);
+  }
+
+  .card-body {
+    background-color: rgb(255, 240, 70);
+  }
+
+  .card-body:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 5px 5px 0 #D2D2D2;
+  }
+
+  .content {
+    padding: 5px;
+    outline: none;
+    height: 200px;
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+}
+
+
+
+
+

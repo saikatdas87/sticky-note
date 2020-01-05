@@ -1,0 +1,23 @@
+<app-add-note [editNoteMode]="true" [noteId]="nodeId" (editEmitter)="editNote($event)" *ngIf="!editFailed && !editSuccess"></app-add-note>
+<div *ngIf="editFailed || editSuccess">
+  <div class="modal-header" >
+    <h4 class="modal-title" id="modal-title">Edit a note</h4>
+    <button type="button" class="close" aria-describedby="modal-title" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <app-alert-message [message]="'Edited successfully'" [alertType]="alertType.Success" *ngIf="editSuccess"></app-alert-message>
+    <app-alert-message [message]="'Failed to Edit : ' + errorMessage" [alertType]="alertType.Failed" *ngIf="editFailed"></app-alert-message>
+    <div class="test" *ngIf="editSuccess">
+      <app-note [hideToolbar]="true" >
+        <app-note-text [text]="editedNote.content"></app-note-text>
+      </app-note>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button  type="button" class="btn btn-primary" (click)="closeModal()">Close</button>
+  </div>
+</div>
+
+

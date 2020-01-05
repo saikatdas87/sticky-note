@@ -1,0 +1,16 @@
+:host {
+  .app{
+    overflow: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: xx-large;
+    outline: none;
+  }
+}

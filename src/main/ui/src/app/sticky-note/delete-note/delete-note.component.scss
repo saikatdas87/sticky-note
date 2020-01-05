@@ -1,0 +1,14 @@
+:host {
+  .test {
+    width: 250px;
+
+    app-note .card-card-body:hover {
+      transform: scale(1);
+    }
+  }
+
+}
+
+::ng-deep {
+
+}

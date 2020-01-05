@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title-add" *ngIf="!editNoteMode">Add a new note</h4>
+  <h4 class="modal-title" id="modal-title-edit" *ngIf="editNoteMode">Edit a note</h4>
+  <button type="button" class="close" aria-describedby="modal-title" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <app-alert-message [message]="'Note added/updated successfully'" *ngIf="noteAddedSuccess" [alertType]="alertType.Success"></app-alert-message>
+  <app-alert-message [message]="'Failed to add/update Note : '+ errorMessage" *ngIf="failedToAddOrUpdate" [alertType]="alertType.Failed"></app-alert-message>
+  <form [formGroup]="noteForm" *ngIf="!noteAddedSuccess">
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Note text</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="content" placeholder="Add your note here" maxlength="200"></textarea>
+    </div>
+  </form>
+  <app-note [hideToolbar]="true" *ngIf="addedNote && noteAddedSuccess">
+    <!--<ng-template #noteTemplate>
+        <p> {{note.content}}</p>
+    </ng-template> -->
+    <app-note-text [text]="addedNote.content"></app-note-text>
+  </app-note>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="save()" *ngIf="!noteAddedSuccess">Save</button>
+  <button type="button" class="btn btn-primary" (click)="closeModal()">Close</button>
+</div>
