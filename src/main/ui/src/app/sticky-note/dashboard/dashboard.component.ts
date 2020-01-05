@@ -10,7 +10,7 @@ export class Note {
   readonly id?: number;
   readonly content: string;
 
-  constructor(id: number, content: string) {
+  constructor(content: string, id?: number) {
     this.id = id;
     this.content = content;
   }
@@ -36,7 +36,7 @@ export class DashboardComponent implements OnInit {
       this.notes = notes;
     }, error => {
       this.failedToLoad = true;
-      this.failedMessage = error.error.message || error.message;
+      this.failedMessage = error.error ? error.error.message : error.message;
     });
   }
 

@@ -5,7 +5,7 @@ import {Component, ContentChild, EventEmitter, Input, OnInit, Output, TemplateRe
   templateUrl: './note.component.html',
   styleUrls: ['./note.component.scss']
 })
-export class NoteComponent<T> implements OnInit {
+export class NoteComponent<T> {
 
   @Output() delete: EventEmitter<T> = new EventEmitter();
   @Output() edit: EventEmitter<T> = new EventEmitter();
@@ -16,14 +16,11 @@ export class NoteComponent<T> implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {
-  }
-
   onDelete(event) {
     this.delete.emit(event);
   }
 
-  onFocusOut(event) {
+  onClick(event) {
     this.edit.emit(event);
   }
 }

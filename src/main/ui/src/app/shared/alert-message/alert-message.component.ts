@@ -11,15 +11,11 @@ export enum AlertType {
   templateUrl: './alert-message.component.html',
   styleUrls: ['./alert-message.component.scss']
 })
-export class AlertMessageComponent implements OnInit {
+export class AlertMessageComponent {
 
   @Input() message: string;
   @Input() alertType: AlertType;
 
   constructor() { }
-
-  ngOnInit() {
-    console.log('Initialized', this.message, this.alertType);
-  }
 
 }

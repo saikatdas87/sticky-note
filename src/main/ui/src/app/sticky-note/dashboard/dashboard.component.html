@@ -1,13 +1,13 @@
 <div class="card" style="margin: 2%">
   <h5 class="card-header"> Notes</h5>
   <div class="card-body">
-    <app-alert-message [message]="'Failed to add new Note : '+ failedMessage" *ngIf="failedToLoad" [alertType]="failedAlertType"></app-alert-message>
-    <div class="app">
-      <app-note *ngFor="let note of notes" (delete)="deleteNote(note)" (edit)="editNote(note.id)" id="{{note.id}}">
+    <app-alert-message class="uit-note-retrieval-error" [message]="'Failed to load all notes : '+ failedMessage" *ngIf="failedToLoad" [alertType]="failedAlertType"></app-alert-message>
+    <div class="uit-note-contents">
+      <app-note *ngFor="let note of notes" (delete)="deleteNote(note)" (edit)="editNote(note.id)" id="uit-note-{{note.id}}">
         <app-note-text [text]="note.content"></app-note-text>
       </app-note>
 
-      <div *ngIf="notes.length === 0" class="app">
+      <div *ngIf="notes.length === 0" class="uit-note-contents">
         <div *ngFor="let item of [0, 1, 2]">
           <div class="uit-note-loading-blinking"></div>
         </div>

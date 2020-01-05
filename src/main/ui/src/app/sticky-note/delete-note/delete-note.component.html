@@ -16,6 +16,6 @@
 </div>
 <div class="modal-footer">
   <button type="button" class="btn btn-outline-secondary" (click)="closeModal()" *ngIf="!deleteFailed && !deleteSuccess">Cancel</button>
-  <button type="button" class="btn btn-danger" (click)="delete(note)" *ngIf="!deleteFailed && !deleteSuccess">Delete</button>
+  <button type="button" class="btn btn-danger uit-delete-note-button" (click)="delete(note)" *ngIf="!deleteFailed && !deleteSuccess">Delete</button>
   <button type="button" class="btn btn-primary" (click)="close()">Close</button>
 </div>

@@ -33,7 +33,7 @@ export class EditNoteComponent implements OnInit {
       this.editSuccess = true;
       this.editedNote = note;
     }, error => {
-      this.errorMessage = error.error.message || error.message;
+      this.errorMessage = error.error ? error.error.message : error.message;
       this.editFailed = true;
     });
   }

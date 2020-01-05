@@ -33,7 +33,7 @@ export class DeleteNoteComponent {
       this.deleteSuccess = true;
     }, error => {
       this.deleteFailed = true;
-      this.failMessage = error.error.message || error.message;
+      this.failMessage = error.error ? error.error.message : error.message;
     });
   }
 

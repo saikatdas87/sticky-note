@@ -15,11 +15,19 @@ describe('NoteTextComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(NoteTextComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+
   });
 
   it('should create', () => {
+    component = fixture.componentInstance;
+    fixture.detectChanges();
     expect(component).toBeTruthy();
+  });
+
+  it('Display passed text', () => {
+    component = fixture.componentInstance;
+    component.text = 'Sample text';
+    fixture.detectChanges();
+    expect(fixture.nativeElement.textContent).toContain('Sample text');
   });
 });

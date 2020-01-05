@@ -59,7 +59,7 @@ export class AddNoteComponent implements OnInit {
         this.noteAddedSuccess = true;
         this.addedNote = note;
       }, error => {
-        this.errorMessage = error.message;
+        this.errorMessage = error.error ? error.error.message : error.message;
         this.failedToAddOrUpdate = true;
       });
     }

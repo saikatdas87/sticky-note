@@ -7,7 +7,7 @@ import {Note} from '../dashboard/dashboard.component';
   providedIn: 'root'
 })
 export class NoteService {
-  private host = 'http://localhost:8080/';
+  private host = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 

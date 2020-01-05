@@ -18,7 +18,8 @@ import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
     StickyNoteModule,
     HttpClientModule,
     NgbModule,
-    NgbModalModule
+    NgbModalModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],
