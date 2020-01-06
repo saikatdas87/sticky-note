@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   notes: Note[] = [];
   failedToLoad = false;
   failedMessage = '';
-  failedAlertType = AlertType;
+  showAlertType = AlertType;
 
   constructor(private service: NoteService, private modal: NgbModal) {
   }

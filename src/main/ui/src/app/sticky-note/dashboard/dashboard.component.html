@@ -1,8 +1,8 @@
 <div class="card" style="margin: 2%">
   <h5 class="card-header"> Notes</h5>
   <div class="card-body">
-    <app-alert-message class="uit-note-retrieval-error" [message]="'Failed to load all notes : '+ failedMessage" *ngIf="failedToLoad" [alertType]="failedAlertType.Failed"></app-alert-message>
-    <app-alert-message [message]="'No notes found start adding '" *ngIf="!failedToLoad && notes.length === 0" [alertType]="failedAlertType.Warning"></app-alert-message>
+    <app-alert-message class="uit-note-retrieval-error" [message]="'Failed to load all notes : '+ failedMessage" *ngIf="failedToLoad" [alertType]="showAlertType.Failed"></app-alert-message>
+    <app-alert-message [message]="'No notes found start by adding'" *ngIf="!failedToLoad && notes.length === 0" [alertType]="showAlertType.Warning"></app-alert-message>
     <div class="uit-note-contents">
       <app-note *ngFor="let note of notes" (delete)="deleteNote(note)" (edit)="editNote(note.id)" id="uit-note-{{note.id}}">
         <app-note-text [text]="note.content"></app-note-text>
@@ -21,6 +21,3 @@
     </button>
   </div>
 </div>
-
-
-
