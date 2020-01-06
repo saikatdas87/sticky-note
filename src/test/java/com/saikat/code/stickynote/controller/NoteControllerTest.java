@@ -1,7 +1,6 @@
 package com.saikat.code.stickynote.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.saikat.code.stickynote.StickyNoteApplication;
 import com.saikat.code.stickynote.exception.InvalidDataException;
 import com.saikat.code.stickynote.exception.ResourceNotFoundException;
 import com.saikat.code.stickynote.model.Note;
@@ -10,16 +9,9 @@ import com.saikat.code.stickynote.validator.NoteValidator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
