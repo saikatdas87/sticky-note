@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit {
   notes: Note[] = [];
   failedToLoad = false;
   failedMessage = '';
-  failedAlertType: AlertType = AlertType.Failed;
+  failedAlertType = AlertType;
 
   constructor(private service: NoteService, private modal: NgbModal) {
   }
@@ -34,6 +34,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.service.retrieveAllNotes().subscribe(notes => {
       this.notes = notes;
+      this.failedToLoad = false;
+      this.failedMessage = '';
     }, error => {
       this.failedToLoad = true;
       this.failedMessage = error.message;
