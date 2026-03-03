@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {DashboardComponent} from './sticky-note/dashboard/dashboard.component';
 import {StickyNoteModule} from './sticky-note/sticky-note.module';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -22,8 +21,7 @@ import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [DashboardComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

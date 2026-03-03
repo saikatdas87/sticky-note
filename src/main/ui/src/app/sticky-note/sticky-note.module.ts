@@ -24,15 +24,8 @@ import {BrowserModule} from '@angular/platform-browser';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
-    ReactiveFormsModule,
-    SharedModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-  ],
-  entryComponents: [
-    AddNoteComponent,
-    DeleteNoteComponent,
-    EditNoteComponent]
+    SharedModule
+  ]
 })
 export class StickyNoteModule {
 }
