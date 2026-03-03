@@ -5,7 +5,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {StickyNoteModule} from './sticky-note/sticky-note.module';
 import {HttpClientModule} from '@angular/common/http';
-import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -16,9 +16,7 @@ import {NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     StickyNoteModule,
     HttpClientModule,
-    NgbModule,
-    NgbModalModule,
-
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
